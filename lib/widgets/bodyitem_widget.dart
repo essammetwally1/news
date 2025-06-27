@@ -82,7 +82,7 @@ class BodyItemWidget extends StatelessWidget {
           Image.network(
             bodyItemModel.imageAdd,
             fit: BoxFit.cover,
-            width: double.infinity,
+            // width: double.infinity,
             loadingBuilder: (context, child, loadingProgress) {
               if (loadingProgress == null) return child;
               return Center(
