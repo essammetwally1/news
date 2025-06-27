@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:news/screens/home_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:news_app/screens/home_screen.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
+
   runApp(const News());
 }
 
