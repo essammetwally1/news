@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:news_app/screens/home_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(); // OR: await dotenv.load(fileName: ".env");
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  print('API KEY: ${dotenv.env['API_KEY']}');
+  await dotenv.load();
+
+  FlutterNativeSplash.remove();
 
   runApp(const News());
 }
